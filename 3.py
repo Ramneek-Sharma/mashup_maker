@@ -50,18 +50,18 @@ def trim_audios(output_folder):
             file_path = os.path.join(output_folder, file_name)
             trimmed_mp3_file_path = os.path.join(output_folder, "trimmed_" + file_name)
             
-            # Trim the MP3 file to 10 seconds
+           
             command = [
                 'ffmpeg', '-i', file_path,
-                '-ss', '00:00:00',   # Start time
-                '-t', '00:00:10',    # Duration (10 seconds)
+                '-ss', '00:00:00',   
+                '-t', '00:00:10',   
                 '-c', 'copy',
                 trimmed_mp3_file_path
             ]
             subprocess.run(command, check=True)
             print(f"Trimmed audio: {file_path}")
 
-            # Remove the original file
+           
             os.remove(file_path)
 
 def create_mashup(output_folder, mashup_filename="mashup.mp3"):
@@ -71,12 +71,12 @@ def create_mashup(output_folder, mashup_filename="mashup.mp3"):
         print("No trimmed audio files found for mashup.")
         return
 
-    # Create a file with the list of audio files
+   
     with open(os.path.join(output_folder, "file_list.txt"), 'w') as file:
         for audio_file in trimmed_files:
             file.write(f"file '{audio_file}'\n")
 
-    # Concatenate the audio files
+   
     mashup_file_path = os.path.join(output_folder, mashup_filename)
     command = [
         'ffmpeg', '-f', 'concat', '-safe', '0', '-i', os.path.join(output_folder, "file_list.txt"),
@@ -88,10 +88,10 @@ def create_mashup(output_folder, mashup_filename="mashup.mp3"):
     except subprocess.CalledProcessError as e:
         print(f"Error creating mashup: {e}")
 
-    # Cleanup
+   
     os.remove(os.path.join(output_folder, "file_list.txt"))
 
-    # Optionally remove the trimmed files
+   
     for file in trimmed_files:
         os.remove(file)
 
