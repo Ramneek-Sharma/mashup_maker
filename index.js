@@ -89,5 +89,3 @@ app.listen(port, () => {
 
 
 
-// user: 'sramneek2712@gmail.com',
-//                     pass: 'rqym lnqu ifpe awwe' 
