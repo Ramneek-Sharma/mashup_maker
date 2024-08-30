@@ -34,7 +34,7 @@ app.post('/process-audio', (req, res) => {
         }
 
 
-        const zipFilePath = `/Users/ramneeksharma/Desktop/mashup.zip`
+        const zipFilePath = `PATH/mashup.zip`
         
         if (fs.existsSync(zipFilePath)) {
           
@@ -42,13 +42,13 @@ app.post('/process-audio', (req, res) => {
                 service: 'gmail',
                 auth: {
                     
-                    user: 'sramneek2712@gmail.com',
-                    pass: 'rqym lnqu ifpe awwe'     
+                    user: 'email@gmail.com',
+                    pass: 'pass'     
                 }
             });
 
             let mailOptions = {
-                from: 'sramneek2712@gmail.com',    
+                from: 'email@gmail.com',    
                 to: email,
                 subject: 'Your Audio Mashup',
                 text: `Hello ${email},\n\nPlease find the audio mashup attached.\n\nBest regards,\nAudio Team`,
@@ -67,7 +67,7 @@ app.post('/process-audio', (req, res) => {
                 }
                 console.log('Email sent: ' + info.response);
 
-                // Clean up
+                
                 fs.unlinkSync(zipFilePath);
                 res.json({ message: 'Mashup processed and email sent' });
             });
