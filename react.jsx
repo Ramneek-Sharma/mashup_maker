@@ -16,7 +16,7 @@ export function Singer() {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('http://localhost:3000/process-audio', { // Update the endpoint to match your backend
+      const response = await fetch('http://localhost:3000/process-audio', { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ export function Singer() {
         <label className="input input-bordered flex items-center gap-2">
           <input
             type="text"
-            name="singerName" // Update field name to match backend
+            name="singerName" 
             className="grow"
             placeholder="Singer Name"
             value={formData.singerName}
@@ -64,7 +64,7 @@ export function Singer() {
         <label className="input input-bordered flex items-center gap-2">
           <input
             type="number"
-            name="numberOfAudios" // Update field name to match backend
+            name="numberOfAudios" 
             className="grow"
             placeholder="Number of Audios"
             value={formData.numberOfAudios}
