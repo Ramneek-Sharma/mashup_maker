@@ -13,12 +13,14 @@ The project involves several key steps:
 * Packaging- Compresses the resulting mashup into a ZIP file.
 * Email Delivery-Sends the ZIP file to the user via email.
 
-
-
+##Interface
+<img width="386" alt="Screenshot 2024-10-14 at 6 22 52 AM" src="https://github.com/user-attachments/assets/6bf29cb6-53bf-4791-b4d7-13c5f235644e">
 ## Features
 * Search YouTube for specific artists or tracks.
 * Download and process audio from multiple videos.
 * Trim audio to the desired length.
 * Create and send a customized audio mashup via email.
+
+
 
 
